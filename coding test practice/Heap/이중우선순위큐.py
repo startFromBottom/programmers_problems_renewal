@@ -58,25 +58,17 @@ class DoublePriorityQueue:
         return 0
 
 
-# def solution(operations):
-#     dpq = DoublePriorityQueue()
-#
-#     for each in operations:
-#         op, num = each.split(" ")
-#         num = int(num)
-#         if op == "I":
-#             dpq.insert(num)
-#         elif op == "D" and num == -1:
-#             dpq.pop_min()
-#         else:
-#             dpq.pop_max()
-#
-#     return [dpq.get_min(), dpq.get_max()]
+def solution(operations):
+    dpq = DoublePriorityQueue()
 
+    for each in operations:
+        op, num = each.split(" ")
+        num = int(num)
+        if op == "I":
+            dpq.insert(num)
+        elif op == "D" and num == -1:
+            dpq.pop_min()
+        else:
+            dpq.pop_max()
 
-a = [[0, 0], [1, 1]]
-d = {0: a[0], 1: a[1]}
-
-c = d.pop(1)
-c[1] = 100
-print(a)
+    return [dpq.get_min(), dpq.get_max()]
